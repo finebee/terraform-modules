@@ -78,7 +78,7 @@ resource "null_resource" "runner_env_setup" {
 }
 
 resource "kubiya_webhook" "webhook" {
-  // Required
+  // Required fileds
   //mandatory fields
   //Please specify a unique name to identify this webhook
   name = "${var.teammate_name} JIT webhook"
