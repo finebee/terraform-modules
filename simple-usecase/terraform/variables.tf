@@ -1,7 +1,7 @@
 variable "teammate_name" {
   description = "Name of the virtual entity that binds the JIT permissions logic"
   type        = string
-  default     = "jit-guardian"
+  default     = "jit-guardian-state-"
 }
 
 variable "kubiya_runner" {
