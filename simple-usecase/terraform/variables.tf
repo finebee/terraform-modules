@@ -1,9 +1,3 @@
-variable "new_variable" {
-  description = "new variable"
-  type        = string
-  default     = "new variable"
-}
-
 variable "teammate_name" {
   description = "Name of the virtual entity that binds the JIT permissions logic"
   type        = string
@@ -13,22 +7,6 @@ variable "teammate_name" {
 variable "kubiya_runner" {
   description = "Runner (cluster) to use for the teammate"
   type        = string
-}
-
-variable "approves_group_name" {
-  description = "Approves group name"
-  type        = string
-  default     = "Admin"
-}
-
-variable "approvers_slack_channel" {
-  description = "Slack channel for approval requests (must start with #)"
-  type        = string
-  default     = "#devops-oncall"
-  validation {
-    condition     = can(regex("^#", var.approvers_slack_channel))
-    error_message = "Approvers Slack channel must start with #"
-  }
 }
 
 variable "kubiya_groups_allowed_groups" {
@@ -41,91 +19,6 @@ variable "kubiya_integrations" {
   description = "List of Kubiya integrations to enable. Supports multiple values. \n For AWS integration, the main account must be provided."
   type        = list(string)
   default     = ["slack"]
-}
-
-variable "config_json" {
-  description = "List of Kubiya integrations to enable. Supports multiple values. For AWS integration, the main account must be provided."
-  type        = string
-  default     = <<-EOT
-    {
-        "access_configs": {
-            "DB Access to Staging": {
-                "name": "Database Access to Staging",
-                "description": "Grants access to all staging RDS databases",
-                "account_id": "***",
-                "permission_set": "ECRReadOnly",
-                "session_duration": "PT1H"
-            },
-            "Power User to SandBox": {
-                "name": "Power User Access to SandBox",
-                "description": "Grants poweruser permissions on Sandbox",
-                "account_id": "****",
-                "permission_set": "PowerUserAccess",
-                "session_duration": "PT1H"
-            }
-        },
-        "s3_configs": {
-            "Data Lake Read Access": {
-                "name": "data_lake_read 4",
-                "description": "Grants read-only access to data lake buckets",
-                "buckets": [
-                    "company-data-lake-prod",
-                    "company-data-lake-staging"
-                ],
-                "policy_template": "S3ReadOnlyPolicy",
-                "session_duration": "PT1H"
-            }
-        }
-    }
-  EOT
-}
-
-variable "okta_enabled" {
-  description = "Enable Okta Integration"
-  type        = bool
-  default     = false
-}
-
-variable "okta_base_url" {
-  description = "Your Okta domain URL"
-  type        = string
-  default     = "https://org.okta.com"
-}
-
-variable "okta_client_id" {
-  description = "Okta application client ID"
-  type        = string
-  default     = "Okta application client ID"
-}
-
-variable "okta_private_key" {
-  description = "Private key for Okta authentication"
-  type        = string
-  default     = "Private key for Okta authentication"
-}
-
-variable "dd_enabled" {
-  description = "Enable DataDog Integration"
-  type        = bool
-  default     = false
-}
-
-variable "dd_site" {
-  description = "DataDog site"
-  type        = string
-  default     = "us5.datadoghq.com"
-}
-
-variable "dd_api_key" {
-  description = "DataDog API key"
-  type        = string
-  default     = "DataDog API key"
-}
-
-variable "kubiya_tool_timeout" {
-  description = "Timeout for Kubiya tools in seconds, if you have long running tools you may need to increase this"
-  type        = number
-  default     = 500
 }
 
 variable "debug_mode" {

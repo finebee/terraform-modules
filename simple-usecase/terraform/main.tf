@@ -17,7 +17,6 @@ resource "kubiya_agent" "jit_guardian" {
   description   = "AI-powered AWS JIT permissions guardian"
   model         = "azure/gpt-4o"
   instructions  = ""
-  sources       = [kubiya_source.enforcer_source.name, kubiya_source.aws_jit_tools.name]
   integrations  = var.kubiya_integrations
   users         = []
   groups        = var.kubiya_groups_allowed_groups
