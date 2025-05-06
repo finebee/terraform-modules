@@ -1,15 +1,3 @@
-variable "teammate_model" {
-  description = "llm model for teammate"
-  type        = string
-  default     = "azure/gpt-4o"
-}
-
-variable "teammate_description" {
-  description = "Description teammate"
-  type        = string
-  default     = "AI-powered AWS JIT permissions guardian"
-}
-
 variable "teammate_name" {
   description = "Name of the virtual entity that binds the JIT permissions logic"
   type        = string
@@ -19,12 +7,6 @@ variable "teammate_name" {
 variable "kubiya_runner" {
   description = "Runner (cluster) to use for the teammate"
   type        = string
-}
-
-variable "instructions" {
-  description = "Teammate ai instructions"
-  type        = string
-  default = "this is ai instructions"
 }
 
 variable "kubiya_groups_allowed_groups" {
