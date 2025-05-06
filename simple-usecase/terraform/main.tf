@@ -16,7 +16,7 @@ resource "kubiya_agent" "jit_guardian" {
   runner        = var.kubiya_runner
   description   = var.teammate_description
   model         = var.teammate_model
-  instructions  = ""
+  instructions  = var.instructions
   integrations  = var.kubiya_integrations
   users         = []
   groups        = var.kubiya_groups_allowed_groups

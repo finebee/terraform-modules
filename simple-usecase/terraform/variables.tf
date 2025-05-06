@@ -21,6 +21,12 @@ variable "kubiya_runner" {
   type        = string
 }
 
+variable "instructions" {
+  description = "Teammate ai instructions"
+  type        = string
+  default = "this is ai instructions"
+}
+
 variable "kubiya_groups_allowed_groups" {
   description = "Kubiya groups who can request access through the teammate"
   type        = list(string)
