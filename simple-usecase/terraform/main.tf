@@ -14,9 +14,9 @@ provider "kubiya" {
 resource "kubiya_agent" "jit_guardian" {
   name          = var.teammate_name
   runner        = var.kubiya_runner
-  description   = var.teammate_description
-  model         = var.teammate_model
-  instructions  = var.instructions
+  description   = "teammate description"
+  model         = "azure/gpt-4o"
+  instructions  = "ai instructions"
   integrations  = var.kubiya_integrations
   users         = []
   groups        = var.kubiya_groups_allowed_groups
