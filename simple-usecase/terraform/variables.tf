@@ -10,12 +10,6 @@ variable "teammate_description" {
   default     = "AI-powered AWS JIT permissions guardian"
 }
 
-variable "instructions" {
-  description = "Teammate ai instructions"
-  type        = string
-  default = "this is ai instructions"
-}
-
 variable "teammate_name" {
   description = "Name of the virtual entity that binds the JIT permissions logic"
   type        = string
