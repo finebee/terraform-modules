@@ -4,10 +4,17 @@ variable "teammate_model" {
   default     = "azure/gpt-4o"
 }
 
-variable "teammate_name" {
+
+variable "teammate_description" {
   description = "Name of the virtual entity that binds the JIT permissions logic"
   type        = string
-  default     = "jit-guardian-state-"
+  default     = "AI-powered AWS JIT permissions guardian. [updated]"
+}
+
+variable "teammate_instructions" {
+  description = "Name of the virtual entity that binds the JIT permissions logic"
+  type        = string
+  default     = "this is ai instructions. [updated]"
 }
 
 variable "kubiya_runner" {

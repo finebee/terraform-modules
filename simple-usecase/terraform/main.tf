@@ -12,11 +12,11 @@ provider "kubiya" {
 
 # Configure the JIT Guardian agent
 resource "kubiya_agent" "jit_guardian" {
-  name          = var.teammate_name
+  name          = "jit-guardian-state-1"
   runner        = var.kubiya_runner
-  description   = "AI-powered AWS JIT permissions guardian. updated"
+  description   = var.teammate_description
   model         = var.teammate_model
-  instructions  = "this is ai instructions updated instructions"
+  instructions  = var.teammate_instructions
   integrations  = var.kubiya_integrations
   users         = []
   groups        = var.kubiya_groups_allowed_groups
