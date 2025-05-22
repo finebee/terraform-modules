@@ -4,12 +4,6 @@ variable "teammate_model" {
   default     = "azure/gpt-4o"
 }
 
-variable "teammate_description" {
-  description = "Description teammate"
-  type        = string
-  default     = "AI-powered AWS JIT permissions guardian"
-}
-
 variable "teammate_name" {
   description = "Name of the virtual entity that binds the JIT permissions logic"
   type        = string

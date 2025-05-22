@@ -14,7 +14,7 @@ provider "kubiya" {
 resource "kubiya_agent" "jit_guardian" {
   name          = var.teammate_name
   runner        = var.kubiya_runner
-  description   = var.teammate_description
+  description   = "AI-powered AWS JIT permissions guardian. updated"
   model         = var.teammate_model
   instructions  = "this is ai instructions updated instructions"
   integrations  = var.kubiya_integrations
